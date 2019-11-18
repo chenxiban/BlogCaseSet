@@ -10,5 +10,6 @@
   	<module>SpringBootSwaggers</module>
     <module>SpringBoot-Jsp-Jstl</module>
     <module>SpringBoot-Quartz</module>
+    <module>SpringBoot-Mybatis</module>
   </modules>
 </project>

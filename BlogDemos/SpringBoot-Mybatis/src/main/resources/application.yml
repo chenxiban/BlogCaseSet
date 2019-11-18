@@ -1,0 +1,57 @@
+## Mybatis 配置
+# 实体所在包，起别名
+mybatis: 
+  typeAliasesPackage: com.cyj.springboot.entity	
+  # 映射文件所在路径
+  mapperLocations: classpath:mapper/*.xml
+
+#日志输出debug级别以上细节
+#logging.level.org.springframework.web=info
+#日志输出mybatis接口执行SQL的细节
+logging: 
+  level: 
+    com: 
+      cyj: 
+        springboot: 
+          mapper: debug
+
+#应用项目名称
+#server.context-path=/mydemo
+#修改tomcat的URIEncoding为UTF-8
+server: 
+  port: 80
+  tomcat: 
+    uri-encoding: UTF-8
+     
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #数据库意思是:机构权限文件
+    url: mysql://localhost:3306/springbootmybatisdb?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: root
+    dbcp2:                                          # 进行数据库连接池的配置
+      min-idle: 5                                   # 数据库连接池的最小维持连接数
+      initial-size: 5                               # 初始化提供的连接数
+      max-total: 5                                  # 最大的连接数
+      max-wait-millis: 200                          # 等待连接获取的最大超时时间
+  #集中解决各种编码问题
+  banner:
+    charset: UTF-8
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  messages:
+    encoding: UTF-8
+  #     spring mvc 视图解析器
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  # 时间格式化
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    # 时区设置
+    time-zone: GMT+8
