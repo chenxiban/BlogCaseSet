@@ -28,7 +28,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     #数据库意思是:机构权限文件
-    url: mysql://localhost:3306/springbootmybatisdb?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT%2B8&useSSL=false
+    url: jdbc:mysql://localhost:3306/springbootmybatisdb?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT%2B8&useSSL=false
     username: root
     password: root
     dbcp2:                                          # 进行数据库连接池的配置
