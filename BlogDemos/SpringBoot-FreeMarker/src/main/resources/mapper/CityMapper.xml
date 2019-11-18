@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.spring.springboot.dao.CityDao">
+	
+	
+	<sql id="Base_Column_List">
+		id, provinceId, cityName, description
+	</sql>
+
+	<select id="findById" resultType="city" parameterType="long">
+		select
+		<include refid="Base_Column_List" />
+		from city
+		where id = #{id}
+	</select>
+
+	<select id="findAllCity" resultType="city" >
+		select
+		<include refid="Base_Column_List" />
+		from city
+	</select>
+
+	<insert id="saveCity" parameterType="city" useGeneratedKeys="true" keyProperty="id">
+		insert into
+			city(<include refid="Base_Column_List" />)
+		values
+			(#{id},#{provinceId},#{cityName},#{description})
+	</insert>
+
+	<update id="updateCity" parameterType="city">
+		update
+			city
+		set
+		<if test="provinceId!=null">
+			provinceId = #{provinceId},
+		</if>
+		<if test="cityName!=null">
+			cityName = #{cityName},
+		</if>
+		<if test="description!=null">
+			description = #{description}
+		</if>
+		where
+			id = #{id}
+	</update>
+
+	<delete id="deleteCity" parameterType="java.lang.Long">
+		delete from
+			city
+		where
+			id = #{id}
+	</delete>
+	
+</mapper>

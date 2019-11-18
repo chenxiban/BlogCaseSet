@@ -1,0 +1,11 @@
+*********** 静态资源处理 ***********************
+SpringBoot提供默认静态资源目录在classpath:static/ 或者classpath:public/目录
+*********** FreeMarker模板(2步) ***********************
+SpringBoot使用FreeMarker模板步骤
+1.POM文件中添加spring-boot-starter-freemarker依赖
+2.在application.properties配置freemarker配置或者使用默认模板位置/src/main/resources/templates/ 及默认后缀
+3.返回视图名称不需要.ftl
+*********** 全局异常处理 (2步)***********************
+1.写一个类和一个方法
+2.分别注解@ControllerAdvice和@ExceptionHandler(RuntimeException.class)
+方法上注解该方法要捕获的异常类型
