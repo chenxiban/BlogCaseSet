@@ -10,10 +10,9 @@ mybatis:
 #日志输出mybatis接口执行SQL的细节
 logging: 
   level: 
-    com: 
-      cyj: 
-        springboot: 
-          mapper: debug
+    org: 
+      springframework: 
+        web: debug
 
 #应用项目名称
 #server.context-path=/mydemo
@@ -24,6 +23,8 @@ server:
     uri-encoding: UTF-8
      
 spring:
+  profiles: 
+    active: dev
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     #数据库意思是:机构权限文件
