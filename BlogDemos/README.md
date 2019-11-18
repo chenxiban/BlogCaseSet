@@ -7,9 +7,9 @@ CSDN博客案例：https://blog.csdn.net/Mrs_chens！
 
 ----------------------
 ### 内容
-1. SpringBoot与Swagger2.0的集成
-2. 
-3. 
+1. SpringBoot与Swagger2.0的集成--SpringBootSwaggers
+2. SpringBoot与Jsp集成--SpringBoot-Jsp-Jstl
+3. SpringBoot与Quartz定时器集成--SpringBoot-Quartz
 
 该小项目将长期维护更新博客里的小案例，欢迎大家点心心。
 

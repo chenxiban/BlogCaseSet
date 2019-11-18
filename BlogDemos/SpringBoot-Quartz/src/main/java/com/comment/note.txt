@@ -1,0 +1,4 @@
+加入quartz依赖
+使用springboot的定时任务需要两个注解：
+　　　@EnableScheduling：标注启动定时任务。
+    @Scheduled(fixedRate = 1000 * 30)  定义某个定时任务。

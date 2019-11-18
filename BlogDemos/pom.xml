@@ -9,5 +9,6 @@
   <modules>
   	<module>SpringBootSwaggers</module>
     <module>SpringBoot-Jsp-Jstl</module>
+    <module>SpringBoot-Quartz</module>
   </modules>
 </project>
