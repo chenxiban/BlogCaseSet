@@ -1,0 +1,23 @@
+**************SpringBoot使用JSP和jstl作为视图层********************
+1.创建maven的webapp项目
+2.在POM文件中加入SpringBoot支持JSP和JSTL的两个依赖
+tomcat-embed-jasper
+jstl
+3.在application.properties项目配置文件中配置视图解析规则
+spring.mvc.view.prefix=/WEB-INF/view/
+spring.mvc.view.suffix=.jsp
+4.SpringMVC控制器正常使用即可
+
+*********** 静态资源处理 ***********************
+SpringBoot提供默认静态资源目录在classpath:static/ 或者classpath:public/目录
+
+
+**************SpringBoot使用JSP作为视图层********************
+必须依赖：spring-boot-starter-tomcat 和 spring-boot-maven-plugin
+ 打包成war，通过 java -jar springjspjstl.war 运行正常
+ 
+  备注：
+java环境变量配置要与pom文件中指定的java环境一致：
+<properties>
+<java.version>1.8</java.version>
+</properties> 
