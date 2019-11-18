@@ -1,0 +1,41 @@
+﻿使用Spring Tool Suite 等Eclipse系列工具集成lombok插件：
+	
+	第一步：本地环境配置：
+		1.关闭STS开发工具
+		2.找到本地仓库jar文件设置：例如：C:\Users\ZY\.m2\repository\org\projectlombok\lombok\1.16.12\目录下的lombok-1.16.12.jar库文件
+		3.使用JVM Java虚拟机运行lombok-1.16.12.jar：dos命名：java -jar lombok-1.16.12.jar
+		4.找到STS安装目录下的STS.exe程序，打开并勾选。
+		5.执行按钮 Instal/Update
+		6.重启STS开发工具：Start STS
+		7.Ok完成本地环境配置
+	第二步：在pom.xml引入lombok依赖
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+			<version>1.16.12</version>
+		</dependency>
+
+
+
+--------------------------------------------------------------------
+常用注解
+
+@Data
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
+
+
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
+
+@Slf4j
+//类上面注解了，直接调用 log 即可：
+log.info(xxxx);
+@Builder
+bulder 模式构建对象。
