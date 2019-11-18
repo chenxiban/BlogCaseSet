@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>WebSocket客户端</title>
+		<script type="text/javascript" src="jquery.min.js" ></script>
+	</head>
+	<body>
+		
+		<input type="text" id="msg" /><button onclick="sendMsg()">发给服务器</button>
+		
+		
+		<script type="text/javascript">
+			//6. 主动发送数据给服务器
+			function sendMsg(){
+				websocket.send( $('#msg').val() );
+			}
+			//7. 主动关闭通信
+			function close(){
+				websocket.close();
+			}
+		</script>
+		
+		
+		<script type="text/javascript">
+			//WebSocket服务器地址
+			var wsurl = "ws://localhost:8080/SpringBootWebSocket?token=cocococococcoc&param=张三";
+			//1. 与服务器建立websocket连接
+			var websocket = new WebSocket(wsurl);
+			
+			// 2. 连接成功
+			websocket.onopen = function(event){
+				console.log("成功与服务器建立连接!!!");
+				console.log(event);
+			}
+			//3. 接收服务器数据
+			websocket.onmessage = function(event){
+				console.log("wesocket接收服务器数据event.data=>"+event.data);
+				console.log(event);
+			}
+			
+			//4. 服务器发生异常错误 
+			websocket.onerror = function(event) {
+				console.log("WebSocket:服务器发生异常错误 ");
+				console.log(event);
+			};
+			//5.  服务器关闭 
+			websocket.onclose = function(event) {
+				console.log("WebSocket:已关闭");
+				console.log(event);
+			};
+			
+			
+		</script>
+		
+	</body>
+</html>

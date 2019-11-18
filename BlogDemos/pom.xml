@@ -12,5 +12,6 @@
     <module>SpringBoot-Quartz</module>
     <module>SpringBoot-Mybatis</module>
     <module>SpringBoot-FreeMarker</module>
+    <module>SpringBoot-WebSocket</module>
   </modules>
 </project>
