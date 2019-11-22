@@ -1,0 +1,45 @@
+************** SpringBoot集成JPA步骤(2步): *************
+1.在POM文件中添加JPA依赖
+spring-boot-starter-data-jpa
+mysql-connector-java
+2.在项目配置文件application.properties中配置数据源,JPA项,Hibernate动作
+3.编写 dao 层和 entity 的代码
+dao接口继承JpaRepository接口
+使用javax.persistence.Entity或者javax.persistence.Table注解清楚与关系型数据库的映射
+4.在主模块上使用@EnableJpaRepositories和@EntityScan扫描Jpa接口及实体类.
+@org.springframework.data.jpa.repository.config.EnableJpaRepositories(basePackages = "org.spring.springboot.dao")
+@org.springframework.boot.autoconfigure.domain.EntityScan(basePackages = "org.spring.springboot.entity")
+
+
+************** SpringBoot集成使用Spring测试框架步骤(3步): *************
+1.在Maven的test目录下创建测试类xxxTest或者Testxxx,并在类上注解:
+@RunWith(SpringRunner.class)	//Spring集成Junit单元测试
+@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)	//提供Spring Web 测试环境, 并在测试中支持自动注入 injected field on the test
+@EnableAutoConfiguration	//启用Spring应用程序上下文的自动配置
+2.在类内部可以使用Spring自动注入注解@Autowired@Qualifier@Resource等
+3.编写org.junit.Test测试方法
+
+
+************** SpringBoot集成JPA后使用Specification动态SQL的实现步骤(3步): *************
+1.在使用Spring Data JPA的时候，只要我们的Repository层继承JpaSpecificationExecutor接口就可以使用Specification进行动态SQL查询了
+2.在Service层编写动态sql条件Specification,需要一个org.springframework.data.jpa.domain.Specification接口的实现类.
+CriteriaBuilder创建CriteriaQuery
+CriteriaQuery指定要查询的表，得到Root<UserInfo>，Root代表要查询的表
+CriteriaBuilder创建条件Predicate，Predicate相对于SQL的where条件，多个Predicate可以进行与、或操作
+3.在Repository层的查询中加入Specification动态条件参数.
+
+
+
+
+
+
+
+
+
+
+
+过滤条件
+1：过滤条件会被应用到SQL语句的FROM子句中。在criteria 查询中，查询条件通过Predicate或Expression实例应用到CriteriaQuery对象上。
+2：这些条件使用 CriteriaQuery .where 方法应用到CriteriaQuery 对象上
+3：CriteriaBuilder也作为Predicate实例的工厂，通过调用CriteriaBuilder 的条件方法（ equal，notEqual， gt， ge，lt， le，between，like等）创建Predicate对象。
+4：复合的Predicate 语句可以使用CriteriaBuilder的and, or andnot 方法构建。

@@ -13,5 +13,6 @@
     <module>SpringBoot-Mybatis</module>
     <module>SpringBoot-FreeMarker</module>
     <module>SpringBoot-WebSocket</module>
+    <module>SpringBootJpa-Specification</module>
   </modules>
 </project>
