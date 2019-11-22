@@ -13,6 +13,7 @@ CSDN博客案例：https://blog.csdn.net/Mrs_chens！
 4. SpringBoot集成Mybatis框架--SpringBoot-Mybatis
 5. SpringBoot集成FreeMarker模板技术和SpringBoot全局异常处理--SpringBoot-FreeMarker
 6. SpringBoot集成WebSocket技术--SpringBoot-WebSocket
+7. SpringDataJpa动态Sql--SpringBootJpa-Specification
 
 该小项目将长期维护更新博客里的小案例，欢迎大家点心心。
 
